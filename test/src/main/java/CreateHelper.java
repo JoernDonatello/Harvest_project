@@ -129,7 +129,7 @@ public class CreateHelper extends javax.swing.JFrame {
         this.setVisible(false);
         HelperManager windowHelper = new HelperManager();
         windowHelper.setVisible(true);
-        HelperManager.hinzufugen();
+        
         }
     }//GEN-LAST:event_createHelper
 

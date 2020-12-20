@@ -40,7 +40,7 @@ public class UpdateHelper extends javax.swing.JFrame {
         jButton1.setText("speichern");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                updateBerry(evt);
+                updateHelper(evt);
             }
         });
 
@@ -122,9 +122,9 @@ public static void setHelper(int helperID)
     tfSurname.setText(HelperManager.myHelpers.get(helperID).getSurname());
     cbGender.setSelectedItem(HelperManager.myHelpers.get(helperID).getGender());
 }
-    private void updateBerry(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBerry
-       
-        int selectIndex = HelperManager.HelperList.getSelectedIndex();
+    private void updateHelper(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateHelper
+try {       
+        int selectIndex = HelperManager.jTable.getSelectedRow();
         HelperManager i = HelperManager.myHelpers.get(selectIndex);
         
         if (tfSurname.getText().trim().isEmpty()||tfPrename.getText().trim().isEmpty()) {
@@ -137,8 +137,12 @@ public static void setHelper(int helperID)
         this.setVisible(false);
         HelperManager windowHelper = new HelperManager();
         windowHelper.setVisible(true);
-        HelperManager.hinzufugen();
-    }//GEN-LAST:event_updateBerry
+        }
+catch(Exception e)
+{
+    lbWarning.setText("halt stop");
+}
+    }//GEN-LAST:event_updateHelper
 
     private void tfPrenameclick(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tfPrenameclick
         tfPrename.setText("");
